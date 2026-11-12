@@ -1,0 +1,82 @@
+tive; width: min(90%, 400px); aspect-ratio: 1; border: clamp(8px, 1.2vw, 18px) solid #f9e9bf; border-radius: 50%; background: radial-gradient(ellipse, #fff8df 48%, #dfbf88 80%); box-shadow: inset 0 0 0 5px #bd9566, 0 15px 35px #0006; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0 auto;}
+.plate-section { position: absolute; display: grid; place-items: center; font-size: clamp(16px, 2.5vw, 32px); font-weight: 800; color: #59351f; text-shadow: 0 2px 4px #fff8; transition: transform 0.3s; text-align: center;}
+.plate-section:hover { transform: scale(1.05); cursor: pointer;}
+.plate-carbs { top: 0; left: 0; width: 50%; height: 50%; border-right: 4px dashed #bd9566; border-bottom: 4px dashed #bd9566; }
+.plate-protein { top: 0; right: 0; width: 50%; height: 50%; border-bottom: 4px dashed #bd9566; }
+.plate-veg { bottom: 0; left: 0; width: 100%; height: 50%; }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="stage sunny">
+      
+      <!-- Background Elements -->
+      <div class="forest">
+        <div class="trunk left"></div>
+        <div class="trunk right"></div>
+        <div class="leaf l1">🍃</div>
+        <div class="leaf l2">🌿</div>
+        <div class="spark s1">✨</div>
+        <div class="spark s2">✨</div>
+      </div>
+
+      <!-- Slide 1: Intro -->
+      <div id="slide-intro" class="slide active intro-layout">
+        <div class="wood-panel">
+          <h1>Kembara <span class="hero-title"><span class="yellow">Piramid Makanan</span></span></h1>
+          <p>Sertai Mr. Meow belajar cara pemakanan yang sihat dan seimbang!</p>
+          <button class="btn" onclick="switchSlide('slide-intro', 'slide-map')">Mula Kembara</button>
+        </div>
+        <div style="position: relative; text-align: center;">
+          <!-- Replace emoji with actual cat character image if available -->
+          <div class="cat hero-cat" style="font-size: 140px; margin-top: 20%;">🐱</div>
+          <div class="bubble intro-bubble">Meow! Laparnya!</div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Map / Pyramid -->
+      <div id="slide-map" class="slide map-layout">
+        <div class="pyramid">
+          <div class="tier">Lemak, Minyak, Gula & Garam</div>
+          <div class="tier">Susu & Produk Tenusu</div>
+          <div class="tier">Ikan, Ayam, Daging & Kekacang</div>
+          <div class="tier">Sayur-sayuran & Buah-buahan</div>
+          <div class="tier">Nasi, Mi, Roti, Bijirin & Ubi</div>
+        </div>
+        <div class="map-labels">
+          <button class="btn" onclick="switchSlide('slide-map', 'slide-plate')">Pinggan Sihat Suku-Suku Separuh</button>
+        </div>
+      </div>
+
+      <!-- Slide 3: Healthy Plate -->
+      <div id="slide-plate" class="slide plate-layout">
+        <div class="plate-left">
+          <div class="bubble">Ingat konsep Pinggan Sihat Malaysia: Suku Suku Separuh!</div>
+          <div class="cat" style="font-size: 120px;">😸</div>
+        </div>
+        <div class="plate-area">
+          <div class="plate">
+            <div class="plate-section plate-carbs">Suku:<br>Karbohidrat 🍚</div>
+            <div class="plate-section plate-protein">Suku:<br>Protein 🐟</div>
+            <div class="plate-section plate-veg">Separuh:<br>Sayur & Buah 🥦🍎</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Global Controls -->
+      <div class="controls">
+        <button class="btn back" onclick="location.reload()">↺ Mula Semula</button>
+        <div class="counter">Markah: 0</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function switchSlide(currentId, nextId) {
+      document.getElementById(currentId).classList.remove('active');
+      document.getElementById(nextId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
